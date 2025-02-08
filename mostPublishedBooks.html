@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Most Published Books">
+        <template if:true={books.length}>
+            <lightning-datatable 
+                key-field="title"
+                data={books}
+                columns={columns}
+                sorted-by={sortedBy}
+                sorted-direction={sortedDirection}
+                onsort={handleSort}
+                hide-checkbox-column="true">
+            </lightning-datatable>
+        </template>
+        <template if:false={books.length}>
+            <p class="slds-p-around_medium">No books received yet.</p>
+        </template>
+
+    </lightning-card>
+</template>
